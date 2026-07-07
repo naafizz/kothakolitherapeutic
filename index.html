@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কথাকলি থেরাপিউটিক সেন্টার | শিশুমনের যত্নে</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --paper:#FFFDF9;
+    --ink:#22332E;
+    --teal:#235E58;
+    --teal-deep:#15403C;
+    --sage:#8AA98B;
+    --sage-light:#D8E5D2;
+    --coral:#E8835F;
+    --coral-soft:#F4B79B;
+    --gold:#EFBE5E;
+    --line: rgba(34,51,46,0.12);
+    --r-lg: 32px;
+    --r-md: 20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+  h1,h2,h3,.brand{font-family:'Baloo Da 2','Hind Siliguri',sans-serif;font-weight:700;color:var(--teal-deep);}
+  a{text-decoration:none;color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--coral-soft);color:var(--teal-deep);}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(251,246,238,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1180px;margin:0 auto;}
+  .logo-mark{display:flex;align-items:center;gap:12px;}
+  .logo-name{display:flex;flex-direction:column;line-height:1.15;}
+  .logo-name span.brand{font-size:1.45rem;color:var(--teal-deep);}
+  .logo-name small{font-size:0.72rem;letter-spacing:0.04em;color:var(--sage);font-weight:600;}
+  nav ul{display:flex;gap:34px;list-style:none;}
+  nav ul li a{font-weight:600;font-size:0.98rem;color:var(--teal-deep);position:relative;padding-bottom:4px;}
+  nav ul li a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--coral);transition:width .25s ease;}
+  nav ul li a:hover::after{width:100%;}
+  .nav-cta{background:var(--coral);color:#fff;padding:11px 24px;border-radius:999px;font-weight:700;font-size:0.95rem;box-shadow:0 6px 16px rgba(232,131,95,0.35);transition:transform .2s ease,box-shadow .2s ease;}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(232,131,95,0.45);}
+
+  /* HERO */
+  .hero{position:relative;padding:84px 0 60px;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--sage-light);color:var(--teal-deep);padding:7px 16px;border-radius:999px;font-weight:600;font-size:0.85rem;margin-bottom:22px;}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);}
+  .hero h1{font-size:clamp(2.3rem,4.4vw,3.5rem);line-height:1.28;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--coral);}
+  .hero p.lead{font-size:1.12rem;color:#43564F;max-width:520px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .btn-primary{background:var(--teal-deep);color:#fff;padding:15px 30px;border-radius:999px;font-weight:700;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 24px rgba(21,64,60,0.25);transition:transform .2s ease;}
+  .btn-primary:hover{transform:translateY(-3px);}
+  .btn-ghost{border:2px solid var(--teal-deep);color:var(--teal-deep);padding:13px 28px;border-radius:999px;font-weight:700;transition:background .2s ease,color .2s ease;}
+  .btn-ghost:hover{background:var(--teal-deep);color:#fff;}
+  .hero-stats{display:flex;gap:36px;}
+  .hero-stats div strong{display:block;font-family:'Baloo Da 2';font-size:1.7rem;color:var(--teal);}
+  .hero-stats div span{font-size:0.85rem;color:#5C6F67;}
+  .hero-art{position:relative;height:480px;}
+  .blob{position:absolute;border-radius:50%;}
+  .blob.b1{width:380px;height:380px;background:var(--sage-light);top:10px;left:30px;border-radius:62% 38% 55% 45%/45% 55% 45% 55%;}
+  .blob.b2{width:220px;height:220px;background:var(--coral-soft);bottom:10px;right:10px;border-radius:55% 45% 40% 60%/60% 40% 60% 40%;opacity:.85;}
+  .hero-card{position:absolute;top:60px;left:60px;width:300px;background:var(--paper);border-radius:var(--r-md);padding:22px;box-shadow:0 20px 45px rgba(21,64,60,0.16);}
+  .hero-card p{font-size:0.9rem;color:#516159;margin-top:10px;}
+  .hero-card .tag{display:inline-block;background:var(--gold);color:var(--teal-deep);font-weight:700;font-size:0.78rem;padding:4px 12px;border-radius:999px;margin-top:12px;}
+  .float-chip{position:absolute;background:var(--paper);border-radius:16px;padding:12px 16px;box-shadow:0 14px 30px rgba(21,64,60,0.14);display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.85rem;}
+  .float-chip.fc1{bottom:30px;left:0;animation:floaty 5s ease-in-out infinite;}
+  .float-chip.fc2{top:0;right:0;animation:floaty 6s ease-in-out infinite 1s;}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+  /* TRUST */
+  .trust{background:var(--teal-deep);color:#fff;padding:18px 0;}
+  .trust .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px;text-align:center;}
+  .trust div{font-size:0.92rem;font-weight:600;opacity:0.92;}
+  .trust div b{display:block;font-family:'Baloo Da 2';font-size:1.3rem;color:var(--gold);}
+
+  /* SECTIONS */
+  section{padding:96px 0;}
+  .sec-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .sec-eyebrow{color:var(--coral);font-weight:700;letter-spacing:0.06em;font-size:0.85rem;text-transform:uppercase;display:block;margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:14px;}
+  .sec-head p{color:#52645C;font-size:1.02rem;}
+
+  /* ABOUT */
+  .about{background:var(--paper);}
+  .about .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:center;}
+  .about-img{background:var(--sage-light);border-radius:var(--r-lg);height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .about-img svg{width:78%;}
+  .about h3{font-size:1.7rem;margin-bottom:16px;}
+  .about p{color:#46584F;margin-bottom:16px;}
+  .about-points{list-style:none;margin-top:22px;display:grid;gap:14px;}
+  .about-points li{display:flex;gap:12px;align-items:flex-start;font-weight:600;color:var(--teal-deep);}
+  .about-points li svg{flex-shrink:0;margin-top:3px;}
+
+  /* SERVICES — ৯টা কার্ড, ৩ কলাম */
+  .services{background:var(--cream);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{background:var(--paper);border-radius:var(--r-md);padding:28px 24px;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 22px 40px rgba(21,64,60,0.12);border-color:transparent;}
+  .service-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-family:'Baloo Da 2';font-size:1.3rem;font-weight:800;color:var(--teal-deep);}
+  .service-card:nth-child(1) .service-icon{background:var(--sage-light);}
+  .service-card:nth-child(2) .service-icon{background:var(--coral-soft);}
+  .service-card:nth-child(3) .service-icon{background:#FBE3AE;}
+  .service-card:nth-child(4) .service-icon{background:#D8E5D2;}
+  .service-card:nth-child(5) .service-icon{background:#F4B79B;}
+  .service-card:nth-child(6) .service-icon{background:#FBE3AE;}
+  .service-card:nth-child(7) .service-icon{background:var(--sage-light);}
+  .service-card:nth-child(8) .service-icon{background:var(--coral-soft);}
+  .service-card:nth-child(9) .service-icon{background:#FBE3AE;}
+  .service-card h3{font-size:1.08rem;margin-bottom:8px;}
+  .service-card p{color:#52645C;font-size:0.93rem;}
+
+  /* JOURNEY */
+  .journey{background:var(--teal-deep);color:#F4EFE3;}
+  .journey .sec-head p{color:#BFD3CC;}
+  .journey .sec-head h2{color:#fff;}
+  .river-svg{width:100%;height:auto;}
+  .journey-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:10px;}
+  .journey-step{padding:0 10px;}
+  .journey-step .num{font-family:'Baloo Da 2';font-size:2.1rem;color:var(--gold);display:block;margin-bottom:10px;}
+  .journey-step h4{font-family:'Baloo Da 2';font-size:1.12rem;margin-bottom:8px;color:#fff;}
+  .journey-step p{font-size:0.92rem;color:#C7D8D1;}
+
+  /* APPROACH */
+  .approach{background:var(--paper);}
+  .approach .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .approach-card{background:var(--cream);border-radius:var(--r-lg);padding:42px;}
+  .approach-card .quote-mark{font-family:'Caveat';font-size:4rem;color:var(--coral-soft);line-height:0.5;display:block;margin-bottom:18px;}
+  .approach-card p{font-size:1.08rem;color:#3C4D46;font-style:italic;}
+  .approach-card .signee{margin-top:22px;font-style:normal;font-weight:700;color:var(--teal-deep);font-family:'Hind Siliguri';}
+  .approach-list{display:grid;gap:22px;}
+  .approach-list .item{display:flex;gap:18px;}
+  .approach-list .item .ico{width:46px;height:46px;border-radius:50%;background:var(--sage-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .approach-list h4{font-size:1.05rem;margin-bottom:6px;color:var(--teal-deep);}
+  .approach-list p{font-size:0.93rem;color:#52645C;}
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--sage-light);}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .t-card{background:var(--paper);border-radius:var(--r-md);padding:30px;box-shadow:0 10px 26px rgba(21,64,60,0.06);}
+  .t-stars{color:var(--gold);font-size:1rem;margin-bottom:14px;letter-spacing:2px;}
+  .t-card p{color:#46584F;font-size:0.96rem;margin-bottom:18px;}
+  .t-author{display:flex;align-items:center;gap:12px;}
+  .t-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Baloo Da 2';color:#fff;font-weight:700;}
+  .t-author div b{display:block;font-size:0.92rem;color:var(--teal-deep);}
+  .t-author div span{font-size:0.8rem;color:#7A8B83;}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(120deg,var(--coral) 0%,#D9714C 100%);color:#fff;border-radius:var(--r-lg);padding:56px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;margin:0 auto;max-width:1180px;}
+  .cta-band h3{color:#fff;font-size:1.7rem;margin-bottom:10px;}
+  .cta-band p{color:#FFE7DA;max-width:420px;}
+  .cta-band .btn-primary{background:#fff;color:var(--coral);box-shadow:0 10px 24px rgba(0,0,0,0.15);}
+
+  /* CONTACT */
+  .contact{background:var(--cream);}
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  .contact-info h3{font-size:1.5rem;margin-bottom:18px;}
+  .contact-info p{color:#46584F;margin-bottom:24px;}
+  .info-row{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px;}
+  .info-row .ico{width:44px;height:44px;border-radius:12px;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .info-row b{display:block;color:var(--teal-deep);font-size:0.95rem;}
+  .info-row span{font-size:0.9rem;color:#5C6F67;}
+  .contact-form{background:var(--paper);border-radius:var(--r-lg);padding:36px;border:1px solid var(--line);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .contact-form label{font-size:0.85rem;font-weight:600;color:var(--teal-deep);display:block;margin-bottom:6px;}
+  .contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);font-family:'Hind Siliguri';font-size:0.95rem;background:var(--cream);transition:border-color .2s ease;}
+  .contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--coral);}
+  .contact-form textarea{resize:vertical;min-height:100px;}
+  .contact-form .full{margin-bottom:16px;}
+  .submit-btn{width:100%;background:var(--teal-deep);color:#fff;padding:15px;border:none;border-radius:999px;font-family:'Hind Siliguri';font-weight:700;font-size:1rem;cursor:pointer;transition:background .2s ease;}
+  .submit-btn:hover{background:var(--teal);}
+
+  /* FOOTER */
+  footer{background:var(--teal-deep);color:#CFE0D9;padding:64px 0 26px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:48px;}
+  .footer-brand .logo-name span.brand{color:#fff;}
+  .footer-brand p{margin-top:16px;font-size:0.9rem;color:#9FBAB1;max-width:280px;}
+  .footer-col h5{color:#fff;font-family:'Baloo Da 2';font-size:1rem;margin-bottom:16px;}
+  .footer-col ul{list-style:none;display:grid;gap:10px;}
+  .footer-col ul li a{font-size:0.9rem;color:#A9C3BA;transition:color .2s ease;}
+  .footer-col ul li a:hover{color:var(--gold);}
+  .footer-col ul li{font-size:0.9rem;color:#A9C3BA;}
+  .footer-social{display:flex;gap:12px;margin-top:16px;}
+  .footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;transition:background .2s ease;}
+  .footer-social a:hover{background:var(--coral);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:0.85rem;color:#8FAAA1;}
+
+  /* RESPONSIVE */
+  @media(max-width:980px){
+    nav ul{display:none;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{height:380px;margin-top:10px;}
+    .about .wrap,.approach .wrap,.contact .wrap{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .journey-steps{grid-template-columns:repeat(2,1fr);}
+    .t-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .cta-band{flex-direction:column;text-align:center;}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+    .service-grid{grid-template-columns:1fr;}
+    .journey-steps{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .hero-stats{flex-wrap:wrap;gap:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="#top" class="logo-mark">
+      <img src="logo11.jpeg" alt="কথাকলি লোগো" width="50" height="50" style="border-radius:50%;object-fit:cover;">
+      <span class="logo-name">
+        <span class="brand">কথাকলি</span>
+        <small>THERAPEUTIC CENTER</small>
+      </span>
+    </a>
+    <ul>
+      <li><a href="#about">আমাদের সম্পর্কে</a></li>
+      <li><a href="#services">থেরাপি সেবা</a></li>
+      <li><a href="#journey">প্রক্রিয়া</a></li>
+      <li><a href="#testimonials">অভিভাবকের মতামত</a></li>
+      <li><a href="#contact">যোগাযোগ</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">অ্যাপয়েন্টমেন্ট নিন</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> প্রতিটি শিশুর সম্ভাবনাই আমাদের অনুপ্রেরণা</span>
+      <h1>প্রতিটি শিশুর নিজস্ব <em>কথা</em> বলার অধিকার আছে — আমরা সেই কথা শুনি</h1>
+      <p class="lead">শিশুদের কথা বলা, যোগাযোগ দক্ষতা ও দৈনন্দিন কার্যক্রমে উন্নয়নের জন্য বিজ্ঞানভিত্তিক স্পিচ, অকুপেশনাল ও বিহেভিয়ার থেরাপি সেবার মাধ্যমে সামাজিক দক্ষতা অর্জনই আমাদের লক্ষ্য।</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">
+          ফ্রি কনসালটেশন বুক করুন
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#services" class="btn-ghost">সেবাসমূহ দেখুন</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>৫+</strong><span>বছরের অভিজ্ঞতা</span></div>
+        <div><strong>৮০০+</strong><span>শিশুর পরিচর্যা</span></div>
+        <div><strong>৪+</strong><span>বিশেষজ্ঞ থেরাপিস্ট</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="hero-card">
+        <svg viewBox="0 0 240 90" fill="none" style="width:100%;height:auto;">
+          <path d="M5 70 C 40 70, 40 20, 75 20 S 110 70, 145 70 S 180 20, 235 20" stroke="#E8835F" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="5" cy="70" r="6" fill="#235E58"/>
+          <circle cx="75" cy="20" r="5" fill="#EFBE5E"/>
+          <circle cx="145" cy="70" r="5" fill="#8AA98B"/>
+          <circle cx="235" cy="20" r="6" fill="#235E58"/>
+        </svg>
+        <p>প্রতিটি শিশুর অগ্রগতির পথ আলাদা — আমরা সেই পথ ধরেই এগোই।</p>
+        <span class="tag">ব্যক্তিগতকৃত থেরাপি পরিকল্পনা</span>
+      </div>
+      <div class="float-chip fc1">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C0.7 8 2 4 6 4c2 0 3.5 1 4 2.3C10.5 5 12 4 14 4c4 0 5.3 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" fill="#E8835F"/></svg>
+        সহানুভূতিশীল যত্ন
+      </div>
+      <div class="float-chip fc2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.9L21 9.3l-5.4 4.2L17.4 21 12 17l-5.4 4 1.8-7.5L3 9.3l6.4-.4z" fill="#EFBE5E"/></svg>
+        প্রমাণভিত্তিক পদ্ধতি
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div><b>স্পিচ থেরাপি</b>ভাষা ও যোগাযোগ</div>
+    <div><b>অকুপেশনাল থেরাপি</b>সংবেদনশীল সংহতি</div>
+    <div><b>আচরণগত থেরাপি</b>ABA-ভিত্তিক</div>
+    <div><b>প্যারেন্টস ট্রেনিং</b>পরিবারকেন্দ্রিক সহায়তা</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-img">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="90" fill="#C7DAC2"/>
+        <path d="M60 120c0-30 18-55 40-55s40 25 40 55-18 40-40 40-40-10-40-40z" fill="#235E58"/>
+        <circle cx="85" cy="105" r="6" fill="#FBF6EE"/>
+        <circle cx="115" cy="105" r="6" fill="#FBF6EE"/>
+        <path d="M85 130c5 6 25 6 30 0" stroke="#FBF6EE" stroke-width="4" stroke-linecap="round"/>
+        <path d="M60 70c10-15 70-15 80 0" stroke="#E8835F" stroke-width="4" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <div>
+      <span class="sec-eyebrow">আমাদের সম্পর্কে</span>
+      <h3>"কথাকলি" মানে শব্দ আর গল্পের মেলবন্ধন</h3>
+      <p>আমরা বিশ্বাস করি প্রতিটি শিশুর মধ্যেই নিজস্ব এক ভাষা লুকিয়ে আছে — সেটা হতে পারে কথায়, ছবিতে, খেলায় কিংবা স্পর্শে। কথাকলি থেরাপিউটিক সেন্টার সেই ভাষাকে খুঁজে বের করে, লালন করে এবং শিশুকে তার নিজের পথে এগিয়ে যেতে সাহায্য করে।</p>
+      <p>আমাদের দল গঠিত স্পিচ-ল্যাঙ্গুয়েজ থেরাপিস্ট, অকুপেশনাল থেরাপিস্ট, ডেভেলপমেন্টাল সাইকোলজিস্ট ও স্পেশাল এডুকেটরদের নিয়ে — যারা প্রতিটি শিশুর জন্য একক, ব্যক্তিগতকৃত পরিকল্পনা তৈরি করেন।</p>
+      <ul class="about-points">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#D8E5D2"/><path d="M7 12.5l3 3 7-7" stroke="#235E58" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> লাইসেন্সপ্রাপ্ত ও অভিজ্ঞ থেরাপিস্ট দল</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#D8E5D2"/><path d="M7 12.5l3 3 7-7" stroke="#235E58" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> খেলাভিত্তিক ও সংবেদনশীল-বান্ধব পরিবেশ</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#D8E5D2"/><path d="M7 12.5l3 3 7-7" stroke="#235E58" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> অভিভাবকদের সাথে নিয়মিত অগ্রগতি পর্যালোচনা</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — ৯টা -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">আমাদের সেবা</span>
+      <h2>প্রতিটি শিশুর জন্য বিশেষায়িত থেরাপি</h2>
+      <p>বয়স, প্রয়োজন ও বিকাশের ধাপ অনুযায়ী সাজানো নয়টি বিশেষ থেরাপি সেবা।</p>
+    </div>
+    <div class="service-grid">
+
+      <!-- ০১ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 1116 0v3a3 3 0 01-3 3h-1v-6h4M4 16v-3a8 8 0 018-8" stroke="#235E58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>স্পিচ এন্ড ল্যাংগুয়েজ থেরাপি</h3>
+        <p>কথা বলা, শব্দভাণ্ডার ও যোগাযোগ দক্ষতা বৃদ্ধিতে ব্যক্তিগতকৃত সেশন।</p>
+      </div>
+
+      <!-- ০২ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zm9-4v4l3 3" stroke="#235E58" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="2" fill="#235E58"/></svg>
+        </div>
+        <h3>অডিটরি ভার্বাল (AVT) থেরাপি</h3>
+        <p>শ্রবণশক্তি ব্যবহার করে ভাষা আয়ত্ত করার আন্তর্জাতিকভাবে স্বীকৃত পদ্ধতি।</p>
+      </div>
+
+      <!-- ০৩ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 0 5 2 5 4.5S14 12 12 13c-2-1-5-3-5-5.5S9 3 12 3z" stroke="#235E58" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 15s1 4 4 5 4-5 4-5" stroke="#235E58" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>ওরাল প্লেসমেন্ট থেরাপি</h3>
+        <p>মুখের পেশি ও আর্টিকুলেশন উন্নয়নে বিশেষায়িত থেরাপি পদ্ধতি।</p>
+      </div>
+
+      <!-- ০৪ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20M6 6l12 12M18 6L6 18" stroke="#235E58" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>অকুপেশনাল থেরাপি</h3>
+        <p>দৈনন্দিন জীবনের দক্ষতা ও ফাইন মোটর স্কিল উন্নয়নে কার্যকর থেরাপি।</p>
+      </div>
+
+      <!-- ০৫ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#235E58" stroke-width="1.7"/><path d="M8 12s1-3 4-3 4 3 4 3-1 3-4 3-4-3-4-3z" stroke="#235E58" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.5" fill="#235E58"/></svg>
+        </div>
+        <h3>সেন্সরি ইন্টিগ্রেশন থেরাপি</h3>
+        <p>সংবেদনশীল তথ্য প্রক্রিয়াকরণ উন্নয়নে বিশেষ কার্যক্রম ও খেলাধুলা।</p>
+      </div>
+
+      <!-- ০৬ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z" stroke="#235E58" stroke-width="1.7" stroke-linejoin="round"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8" stroke="#235E58" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>ভয়েস থেরাপি</h3>
+        <p>কণ্ঠস্বরের মান উন্নয়ন, পিচ নিয়ন্ত্রণ ও বলিষ্ঠ উচ্চারণ দক্ষতা অর্জন।</p>
+      </div>
+
+      <!-- ০৭ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C0.7 8 2 4 6 4c2 0 3.5 1 4 2.3C10.5 5 12 4 14 4c4 0 5.3 4 3.5 8-2.5 4.5-9.5 9-9.5 9z" stroke="#235E58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>বিহেভিয়ারাল থেরাপি (ABA)</h3>
+        <p>ইতিবাচক আচরণ গঠন ও দৈনন্দিন জীবনের দক্ষতা শেখাতে কাঠামোবদ্ধ পদ্ধতি।</p>
+      </div>
+
+      <!-- ০৮ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#235E58" stroke-width="1.6"/><circle cx="17" cy="9" r="2.4" stroke="#235E58" stroke-width="1.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.3 1.6-4.2 3.5-4.8" stroke="#235E58" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>প্যারেন্টস ট্রেনিং</h3>
+        <p>বাড়িতে থেরাপি ধারাবাহিক রাখতে অভিভাবকদের ব্যবহারিক প্রশিক্ষণ ও গাইডলাইন।</p>
+      </div>
+
+      <!-- ০৯ -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-1" stroke="#235E58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 4h10a2 2 0 012 2v6a2 2 0 01-2 2H7l-4 4V6a2 2 0 012-2z" stroke="#235E58" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>প্যারেন্টস কাউন্সেলিং</h3>
+        <p>পরিবারের মানসিক সহায়তা, উদ্বেগ কমানো ও সঠিক দিকনির্দেশনায় বিশেষজ্ঞ পরামর্শ।</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" style="color:#EFBE5E;">থেরাপির যাত্রা</span>
+      <h2>আমরা যেভাবে এগিয়ে চলি, ধাপে ধাপে</h2>
+      <p>প্রথম সাক্ষাৎ থেকে দীর্ঘমেয়াদি অগ্রগতি — পুরো প্রক্রিয়াটি স্বচ্ছ ও পরিবারকেন্দ্রিক।</p>
+    </div>
+    <div>
+      <svg class="river-svg" viewBox="0 0 1000 70" preserveAspectRatio="none">
+        <path d="M10 35 C 150 5, 280 65, 410 35 S 660 5, 790 35 S 950 5, 990 35" stroke="#EFBE5E" stroke-width="2.5" fill="none" stroke-dasharray="2 10" stroke-linecap="round"/>
+      </svg>
+      <div class="journey-steps">
+        <div class="journey-step"><span class="num">০১</span><h4>প্রাথমিক পরামর্শ</h4><p>শিশু ও পরিবারের সাথে পরিচিতি এবং উদ্বেগের কথা শোনা।</p></div>
+        <div class="journey-step"><span class="num">০২</span><h4>বিস্তারিত মূল্যায়ন</h4><p>মান নির্ণায়ক টুল দিয়ে যোগাযোগ, আচরণ ও বিকাশ মূল্যায়ন।</p></div>
+        <div class="journey-step"><span class="num">০৩</span><h4>ব্যক্তিগত পরিকল্পনা</h4><p>শিশুর প্রয়োজন অনুযায়ী লক্ষ্যনির্ধারিত থেরাপি রোডম্যাপ।</p></div>
+        <div class="journey-step"><span class="num">০৪</span><h4>নিয়মিত অগ্রগতি পর্যালোচনা</h4><p>প্রতি মাসে অভিভাবকদের সাথে অগ্রগতি ভাগাভাগি ও পরিকল্পনা সমন্বয়।</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="wrap">
+    <div class="approach-card">
+      <span class="quote-mark">"</span>
+      <p>আমরা শিশুকে "ঠিক করা"র চেষ্টা করি না — আমরা তার জগৎটা বুঝতে চাই, আর সেই বোঝাপড়া থেকেই শুরু হয় প্রকৃত উন্নতি।</p>
+      <p class="signee">— কথাকলি থেরাপিউটিক সেন্টার</p>
+    </div>
+    <div>
+      <span class="sec-eyebrow">আমাদের দর্শন</span>
+      <h3 style="font-size:1.7rem;margin-bottom:20px;">যত্নের সাথে বিজ্ঞান, ধৈর্যের সাথে ভালোবাসা</h3>
+      <div class="approach-list">
+        <div class="item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="#235E58" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div><h4>শিশুকেন্দ্রিক পদ্ধতি</h4><p>প্রতিটি সেশন সাজানো হয় শিশুর আগ্রহ ও গতিতে।</p></div>
+        </div>
+        <div class="item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18M7 14l4-4 3 3 5-6" stroke="#235E58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>প্রমাণভিত্তিক অনুশীলন</h4><p>আন্তর্জাতিক মান অনুসরণ করে গবেষণালব্ধ থেরাপি পদ্ধতি।</p></div>
+        </div>
+        <div class="item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M9 7a3 3 0 116 0 3 3 0 01-6 0zM15 14a4 4 0 00-6 0" stroke="#235E58" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h4>পরিবার ও সেন্টার একসাথে</h4><p>অভিভাবকদের প্রশিক্ষণ দিয়ে বাড়িতেও থেরাপির ধারাবাহিকতা নিশ্চিত।</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow">অভিভাবকের মতামত</span>
+      <h2>পরিবারগুলোর নিজের ভাষায়</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>আমার ছেলে দুই বছরে প্রথম "আম্মু" ডেকেছে কথাকলির স্পিচ থেরাপিস্টের সাথে কাজ করার পর। আমরা কৃতজ্ঞ।</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:#235E58;">র</div>
+          <div><b>রুমানা ইসলাম</b><span>মা, যশোর</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>থেরাপিস্টরা শুধু সেশন নেন না, পুরো পরিবারকে সাথে নিয়ে কাজ করেন। প্যারেন্টস ট্রেনিং আমাদের জন্য খুবই উপকারী।</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:#E8835F;">ক</div>
+          <div><b>কামরুল হাসান</b><span>বাবা, খুলনা</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>আমার মেয়ের সংবেদনশীল প্রতিক্রিয়া অনেকটাই শান্ত হয়েছে সেন্সরি ইন্টিগ্রেশন থেরাপির পর। পরিবেশটাও খুব শিশু-বান্ধব।</p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:#EFBE5E;color:#235E58;">স</div>
+          <div><b>সাবিনা ইয়াসমিন</b><span>মা, যশোর</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:0 28px 96px;">
+  <div class="cta-band">
+    <div>
+      <h3>আপনার শিশুর যাত্রা আজই শুরু হোক</h3>
+      <p>একটি ফ্রি কনসালটেশনের মাধ্যমে জেনে নিন কীভাবে আমরা সাহায্য করতে পারি।</p>
+    </div>
+    <a href="#contact" class="btn-primary">এখনই বুক করুন</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <span class="sec-eyebrow">যোগাযোগ করুন</span>
+      <h3>আমাদের সাথে কথা বলুন</h3>
+      <p>আপনার শিশুর প্রয়োজন নিয়ে আলোচনা করতে নিচের ফর্মটি পূরণ করুন অথবা সরাসরি যোগাযোগ করুন।</p>
+      <div class="info-row">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 012-2h2.3a1 1 0 01.97.76l1 4a1 1 0 01-.45 1.1L7.4 10a12 12 0 006.6 6.6l1.14-1.42a1 1 0 011.1-.45l4 1a1 1 0 01.76.97V19a2 2 0 01-2 2h-1C9.6 21 3 14.4 3 6V5z" stroke="#235E58" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div><b>ফোন</b><span>+880 1920-097474</span></div>
+      </div>
+      <div class="info-row">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" stroke="#235E58" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div><b>ইমেইল</b><span>kothakoli.therapeuticcenter@gmail.com</span></div>
+      </div>
+      <div class="info-row">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z" stroke="#235E58" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4" stroke="#235E58" stroke-width="1.6"/></svg></div>
+        <div><b>ঠিকানা</b><span>হোলডিং নং-১৩৯৫, ধর্মতলা তিন খাম্বার মোড়, আশীর্বাদ এজি স্কুলের পাশে, Jessore, Bangladesh</span></div>
+      </div>
+      <div class="info-row">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3" stroke="#235E58" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#235E58" stroke-width="1.6"/></svg></div>
+        <div><b>খোলার সময়</b><span>শনি–বৃহস্পতি, সকাল ১০টা – রাত ৮টা</span></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault();this.querySelector('.submit-btn').textContent='ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।';">
+      <div class="form-row">
+        <div><label>অভিভাবকের নাম</label><input type="text" placeholder="আপনার নাম" required></div>
+        <div><label>ফোন নম্বর</label><input type="tel" placeholder="০১৯xx-xxxxxx" required></div>
+      </div>
+      <div class="full">
+        <label>শিশুর বয়স</label>
+        <select>
+          <option>২ – ৪ বছর</option>
+          <option>৫ – ৭ বছর</option>
+          <option>৮ – ১২ বছর</option>
+          <option>১৩+ বছর</option>
+        </select>
+      </div>
+      <div class="full">
+        <label>থেরাপির ধরন</label>
+        <select>
+          <option>স্পিচ এন্ড ল্যাংগুয়েজ থেরাপি</option>
+          <option>অডিটরি ভার্বাল (AVT) থেরাপি</option>
+          <option>ওরাল প্লেসমেন্ট থেরাপি</option>
+          <option>অকুপেশনাল থেরাপি</option>
+          <option>সেন্সরি ইন্টিগ্রেশন থেরাপি</option>
+          <option>ভয়েস থেরাপি</option>
+          <option>বিহেভিয়ারাল থেরাপি</option>
+          <option>প্যারেন্টস ট্রেনিং</option>
+          <option>প্যারেন্টস কাউন্সেলিং</option>
+        </select>
+      </div>
+      <div class="full"><label>আপনার বার্তা</label><textarea placeholder="শিশুর সমস্যা সম্পর্কে সংক্ষেপে লিখুন..."></textarea></div>
+      <button class="submit-btn" type="submit">কনসালটেশন রিকোয়েস্ট পাঠান</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo-mark">
+          <img src="logo11.jpeg" alt="কথাকলি লোগো" width="48" height="48" style="border-radius:50%;object-fit:cover;">
+          <span class="logo-name"><span class="brand">কথাকলি</span></span>
+        </a>
+        <p>শিশুমনের ভাষা বোঝার আশ্রয়স্থল। অটিজম ও মানসিক বিকাশজনিত চ্যালেঞ্জে পরিবারের পাশে।</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/kothakoli098?mibextid=wwXIfr&rdid=CtvC51pk5jjjneNV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HTZFCXsyg%2F%3Fmibextid%3DwwXIfr%26ref%3D1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 8h-2a1 1 0 00-1 1v2h3l-.5 3H12v8H9v-8H7v-3h2V9a4 4 0 014-4h2z" fill="#CFE0D9"/></svg></a>
+          <a href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#CFE0D9" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#CFE0D9" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="#CFE0D9"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>সেবাসমূহ</h5>
+        <ul>
+          <li><a href="#services">স্পিচ থেরাপি</a></li>
+          <li><a href="#services">AVT থেরাপি</a></li>
+          <li><a href="#services">অকুপেশনাল থেরাপি</a></li>
+          <li><a href="#services">সেন্সরি ইন্টিগ্রেশন</a></li>
+          <li><a href="#services">বিহেভিয়ারাল থেরাপি</a></li>
+          <li><a href="#services">প্যারেন্টস ট্রেনিং</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>প্রতিষ্ঠান</h5>
+        <ul>
+          <li><a href="#about">আমাদের সম্পর্কে</a></li>
+          <li><a href="#journey">প্রক্রিয়া</a></li>
+          <li><a href="#testimonials">মতামত</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>যোগাযোগ</h5>
+        <ul>
+          <li>+880 1920-097474</li>
+          <li>kothakoli.therapeuticcenter@gmail.com</li>
+          <li>ধর্মতলা তিন খাম্বার মোড়, যশোর</li>
+          <li>শনি–বৃহস্পতি, ১০টা–৮টা</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© ২০২৬ কথাকলি থেরাপিউটিক সেন্টার। সর্বস্বত্ব সংরক্ষিত।</span>
+      <span>DEV-NAFIZ HASAN</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
