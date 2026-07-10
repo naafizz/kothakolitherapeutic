@@ -222,6 +222,88 @@
     color:var(--teal-deep);
 }
 
+.approach-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    min-height:430px;
+
+}
+
+.doctor-slide{
+
+    display:none;
+
+    animation:fade .7s;
+
+}
+
+.doctor-slide.active{
+
+    display:block;
+
+}
+
+.doctor-img{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:0 auto 20px;
+
+    border:5px solid #D8E5D2;
+
+}
+
+.doctor-quote{
+
+    font-size:18px;
+
+    font-style:italic;
+
+    margin-bottom:18px;
+
+}
+
+.doctor-slide h4{
+
+    color:#235E58;
+
+    margin-bottom:5px;
+
+}
+
+.doctor-slide span{
+
+    color:#777;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+  
 @media(max-width:980px){
 
     .menu-toggle{
@@ -501,11 +583,73 @@
 <!-- APPROACH -->
 <section class="approach">
   <div class="wrap">
+
+    
     <div class="approach-card">
-      <span class="quote-mark">"</span>
-      <p>আমরা শিশুকে "ঠিক করা"র চেষ্টা করি না — আমরা তার জগৎটা বুঝতে চাই, আর সেই বোঝাপড়া থেকেই শুরু হয় প্রকৃত উন্নতি।</p>
-      <p class="signee">— কথাকলি থেরাপিউটিক সেন্টার</p>
+
+    <div class="doctor-slide active">
+
+        <img src="anwar.jpeg" class="doctor-img">
+
+        <p class="doctor-quote">
+            "আমরা শিশুকে ঠিক করার চেষ্টা করি না, বরং তার শক্তিগুলোকে বিকশিত করি।"
+        </p>
+
+        <h4>ডাঃ মো: আনোয়ার শাহাদাত সুইট</h4>
+
+        <span>স্পিচ এন্ড ল্যাংগুয়েজ থেরাপিস্ট</span>
+
     </div>
+
+    <div class="doctor-slide">
+
+        <img src="queen.jpeg" class="doctor-img">
+
+        <p class="doctor-quote">
+            "Dedicated to Better Hearing, Better Speech, Better Life."
+        </p>
+
+        <h4>ডাঃ মোছা: শামিমা ইসলাম (কুইন)</h4>
+
+        <span>অকুপেশনাল থেরাপিস্ট</span>
+
+    </div>
+
+      
+
+    <div class="doctor-slide">
+
+        <img src="sabbir.jpeg" class="doctor-img">
+
+        <p class="doctor-quote">
+            "পরিবারের সহযোগিতা ছাড়া কোনো থেরাপিই সম্পূর্ণ নয়।"
+        </p>
+
+        <h4> সাব্বির আহমেদ</h4>
+
+        <span>Behaviour Therapist</span>
+
+    </div>
+
+      <div class="doctor-slide">
+
+        <img src="#" class="doctor-img">
+
+        <p class="doctor-quote">
+            "পরিবারের সহযোগিতা ছাড়া কোনো থেরাপিই সম্পূর্ণ নয়।"
+        </p>
+
+        <h4>ডাঃ  রুমন হোসেন</h4>
+
+        <span>Behaviour Therapist</span>
+
+    </div>
+
+</div>
+
+
+
+    
     <div>
       <span class="sec-eyebrow">আমাদের দর্শন</span>
       <h3 style="font-size:1.7rem;margin-bottom:20px;">যত্নের সাথে বিজ্ঞান, ধৈর্যের সাথে ভালোবাসা</h3>
@@ -742,6 +886,37 @@
   });
   
   </script>
+
+
+  <script>
+
+const slides=document.querySelectorAll(".doctor-slide");
+
+let current=0;
+
+function showSlide(index){
+
+    slides.forEach(slide=>slide.classList.remove("active"));
+
+    slides[index].classList.add("active");
+
+}
+
+setInterval(()=>{
+
+    current++;
+
+    if(current>=slides.length){
+
+        current=0;
+
+    }
+
+    showSlide(current);
+
+},5000);
+
+</script>
 
 </body>
 </html>
